@@ -1,0 +1,118 @@
+/* === GLOBAL STYLES === */
+:root {
+  ---bg: #0a0a0a;
+  --color-fg: #ffffff;
+  --color-accent: #00F5FF;
+  --color-accent-secondary: #03A9F4; /* derived from accent color */
+  --blur-amount: 12px;
+  --border-glow: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  margin: 0;
+  padding: 0;
+}
+
+/* === CARD STYLES === */
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(var(--blur-amount));
+  border: var(--border-glow);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 16px rgba(var(--color-accent), 0.3);
+}
+
+/* === BUTTON STYLES === */
+.button {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  background: transparent;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  cursor:;
+}
+
+.button:hover {
+  box-shadow: 0 0 8px rgba(var(--color-accent), 0.4);
+}
+
+/* === INPUT STYLES === */
+.input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-accent);
+  color: var(--color-fg);
+  padding: 0.5rem 0;
+ _field: 100%;
+ outline: none;
+}
+
+.input:focus {
+  box-shadow: 0 2px 8px rgba(var(--color-accent), 0.4);
+}
+
+/* === EMPTY STATE STYLES === */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.empty-state-icon {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.empty-state-text {
+  font-size: 18px;
+  color: var(--color-fg);
+}
+
+/* === LOADING STATE STYLES === */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.loading-state-icon {
+  font-size: 24px;
+  margin-bottom: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* === ERROR STATE STYLES === */
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--color-accent);
+}
+
+.error-state-icon {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.error-state-text {
+  font-size: 18px;
+}
